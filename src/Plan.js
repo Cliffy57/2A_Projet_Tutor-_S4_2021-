@@ -3,9 +3,10 @@ integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/k
 crossorigin=""/>*/
 
 import logo from "./logo.svg";
-import "./App.css";
+import "./Plan.css";
 import React from "react";
 import { useState } from "react";
+import { iconrouge } from "./icon.js";
 //import * as L from 'leafleat';
 
 import { Circle, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
@@ -16,7 +17,7 @@ const redOptions = { color: "red" };
 
 //const position = [this.state.lat, this.state.lng]
 
-export default function MyApp() {
+export default function MyMap() {
   var lat = 49.1193089;
   var lng = 6.1757156;
   var zoom = 14;
@@ -33,12 +34,7 @@ export default function MyApp() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker
-          position={position}
-          iconUrl={
-            "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png"
-          }
-        >
+        <Marker position={position} icon={iconrouge}>
           <Popup>Vous êtes ici.</Popup>
         </Marker>
 
