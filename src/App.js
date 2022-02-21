@@ -14,51 +14,42 @@ const circle0 = [49.1193089, 6.1757156];
 const fillBlueOptions = { fillColor: "blue" };
 const redOptions = { color: "red" };
 
-
 //const position = [this.state.lat, this.state.lng]
 
-class MyMap extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      lat: 49.1193089,
-      lng: 6.1757156,
-      zoom: 14,
-    };
-  }
+export default function MyApp() {
+  var lat = 49.1193089;
+  var lng = 6.1757156;
+  var zoom = 14;
+  const position = [lat, lng];
 
-  render() {
-    const position = [this.state.lat, this.state.lng];
-
-    return (
-      <div>
-        <MapContainer
-          center={[49.1193089, 6.1757156]}
-          zoom={13}
-          style={{ height: "80vh", width: "120vh" }}
+  return (
+    <div>
+      <MapContainer
+        center={[49.1193089, 6.1757156]}
+        zoom={13}
+        style={{ height: "80vh", width: "120vh" }}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+        <Marker
+          position={position}
+          iconUrl={
+            "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png"
+          }
         >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <Marker
-            position={position}
-            iconUrl={
-              "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png"
-            }
-          >
-            <Popup>Vous êtes ici.</Popup>
-          </Marker>
+          <Popup>Vous êtes ici.</Popup>
+        </Marker>
 
-          <Marker position={[49.1203081, 6.1757974]}></Marker>
+        <Marker position={[49.1203081, 6.1757974]}></Marker>
 
-          <Marker position={[49.120034, 6.163757]}> </Marker>
-          <Marker position={[49.120702, 6.172125]}> </Marker>
-          <Circle center={circle0} pathOptions={fillBlueOptions} radius={200} />
-        </MapContainer>
-      </div>
-    );
-  }
+        <Marker position={[49.120034, 6.163757]}> </Marker>
+        <Marker position={[49.120702, 6.172125]}> </Marker>
+        <Circle center={circle0} pathOptions={fillBlueOptions} radius={200} />
+      </MapContainer>
+    </div>
+  );
 }
 
 if (navigator.geolocation) {
@@ -73,5 +64,3 @@ if (navigator.geolocation) {
 else {
   alert("Navigateur geolocal incompatible");
 }
-
-export default MyMap;
