@@ -29,6 +29,9 @@ cordova emulate android //pour emulateur
 L'application devrait maintenant fonctionner. Si ce n'est pas le cas, regarder si la platforms ```android``` est installé, et les plugins ```geolocation``` et ```vibration```.
 Si cela ne marche toujours pas, l'apk est disponible dans le repertoir APK du repository.
 
+## Pre-requis
+Merci d'activer la géolocalisation et de désactiver le mode silencieux de l'appareil pour profiter de toutes les fonctionnalitées.
+
 ## Bugs connus
 L'application affiche page blanche avec une barre de navigation lors du lancement, cela n'est pas le résultat souhaité ( le lancement sur React fonctionne et lance l'Application sur la page d'accueil ). Cependant l'application est entièrement utilisable grâce à la barre de navigation.
 Les recherches de lieux doivent impérativement respecter la "case sensitivity" ou il n'y auras pas de résultats.
