@@ -1,2 +1,2 @@
-# 2A_Projet_Tutor-_S4_2021-
-Projet Tut Application Mobile Cordova-React
+# Dix-Cover
+Le projet tuteuré de Clause Axel, Di Paolo Hugo, De Matos Ribeiro Romain, Leduc Thomas, Allegra Nathan
